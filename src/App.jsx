@@ -273,9 +273,20 @@ function StartScreen({ startGame }) {
           <img src={startScreenIcon} alt="icon" />
           <div className="end-of-game-right-side-container">
             <p>Bonjour nouveau‧elle Président‧e,</p>
-            <p>Je n'ai pas réussi à faire assez baissé la vulnérabilité de la ville face à la chaleur mais nos supérieurs vous attendent au tournant.</p>
-            <p>Afin de vous faciliter le travail, mon équipe vous a préparé un simulateur de vulnérabilités pour que vous puissiez vous projeter et voir les effets sur le territoire.</p>
-            <p>Bonne chance nouveau‧elle Président‧e, de la part de votre prédécesseur.</p>
+            <p>
+              Je n'ai pas réussi à faire assez baissé la vulnérabilité de la
+              ville face à la chaleur mais nos supérieurs vous attendent au
+              tournant.
+            </p>
+            <p>
+              Afin de vous faciliter le travail, mon équipe vous a préparé un
+              simulateur de vulnérabilités pour que vous puissiez vous projeter
+              et voir les effets sur le territoire.
+            </p>
+            <p>
+              Bonne chance nouveau‧elle Président‧e, de la part de votre
+              prédécesseur.
+            </p>
             <div className="end-of-game-button-wrapper">
               <button
                 className="start-screen-button"
@@ -314,7 +325,11 @@ function App() {
 
   const numberOfQuestions = questions.length;
 
-  const isGameOver = () => {
+  const normalizeScore = (score) => {
+    return Math.max(0, Math.min(100, score));
+  };
+
+  const isGameOver = () => {   
     //Anywhere in the game
     if (
       score.financement <= 0 ||
@@ -329,8 +344,9 @@ function App() {
     if (questionNumber >= numberOfQuestions) {
       if (score.vulnerabilite < 50) {
         setEndOfGame({ showEndOfGameScreen: true, isVictory: true });
+      } else {
+        setEndOfGame({ showEndOfGameScreen: true, isVictory: false });
       }
-      setEndOfGame({ showEndOfGameScreen: true, isVictory: false });
     }
   };
 
@@ -338,10 +354,10 @@ function App() {
     setShowChoiceFeedback(true);
     setSelectedChoice(choix);
     setScore({
-      financement: score.financement + choix.scoreFinancement,
-      effetRebond: score.effetRebond + choix.scoreEffetRebond,
-      popularite: score.popularite + choix.scorePopularite,
-      vulnerabilite: score.vulnerabilite + choix.scoreVulnerabilite,
+      financement: normalizeScore(score.financement + choix.scoreFinancement),
+      effetRebond: normalizeScore(score.effetRebond + choix.scoreEffetRebond),
+      popularite: normalizeScore(score.popularite + choix.scorePopularite),
+      vulnerabilite: normalizeScore(score.vulnerabilite + choix.scoreVulnerabilite),
     });
   };
 
