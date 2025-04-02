@@ -31,5 +31,5 @@ jobs:
         uses: docker/build-push-action@v5
         with:
           push: true
-          context: ./backend
-          tags: erasme/ws25-atlas-vulnerabilites:${{ github.ref == 'refs/heads/main' && 'latest' || 'dev' }} , erasme/ws25-atlas-vulnerabilites:${{ github.sha }}
+          context: .
+          tags: erasme/ws25-atlas-vulnerabilites:${{ github.ref == 'refs/heads/main' && 'latest' || 'dev' }}, erasme/ws25-atlas-vulnerabilites:${{ github.sha }}
