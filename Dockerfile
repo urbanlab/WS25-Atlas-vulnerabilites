@@ -6,6 +6,6 @@ COPY . /app/
 
 RUN npm install
 
-EXPOSE 5173
+EXPOSE 5174
 
 ENTRYPOINT ["npm", "run", "host"]
