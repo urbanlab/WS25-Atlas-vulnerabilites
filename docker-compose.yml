@@ -1,0 +1,11 @@
+services:
+  app:
+    image: erasme/ws25-atlas-vulnerabilites:latest
+    build:
+      context: .
+    ports:
+      - "5173:5173"
+    volumes:
+      - ./src:/app/src
+    env_file:
+      - .env
