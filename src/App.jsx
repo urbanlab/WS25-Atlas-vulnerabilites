@@ -274,7 +274,7 @@ function StartScreen({ startGame }) {
           <div className="end-of-game-right-side-container">
             <p>Bonjour nouveau‧elle Président‧e,</p>
             <p>
-              Je n'ai pas réussi à faire assez baissé la vulnérabilité de la
+              Je n'ai pas réussi à faire assez baisser la vulnérabilité de la
               ville face à la chaleur mais nos citoyens vous attendent au
               tournant.
             </p>
