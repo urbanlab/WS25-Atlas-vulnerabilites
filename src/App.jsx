@@ -175,7 +175,7 @@ function EndOfGame({ isVictory, restartGame }) {
         topBar: "La réélection en vue",
         mainTitle: "Ça sent bon la réélection !",
         subTitle: "Les vulnérabilités ont diminuées",
-        text: "En même temps avec un tel charisme, elles ne pouvaient pas vous résister. Grâce au succès des actions que vous avez initiées, il semble bien que vous obteniez la majorité.",
+        text: "En même temps, avec un tel charisme, elles ne pouvaient pas vous résister. Grâce au succès des actions que vous avez initiées, les citoyens vous félicitent et sont prêts à vous élire à nouveau.",
       }
     : {
         icon: defeatIcon,
@@ -275,7 +275,7 @@ function StartScreen({ startGame }) {
             <p>Bonjour nouveau‧elle Président‧e,</p>
             <p>
               Je n'ai pas réussi à faire assez baissé la vulnérabilité de la
-              ville face à la chaleur mais nos supérieurs vous attendent au
+              ville face à la chaleur mais nos citoyens vous attendent au
               tournant.
             </p>
             <p>
@@ -284,8 +284,9 @@ function StartScreen({ startGame }) {
               et voir les effets sur le territoire.
             </p>
             <p>
-              Bonne chance nouveau‧elle Président‧e, de la part de votre
-              prédécesseur.
+              Bonne chance nouveau‧elle Président‧e,
+              <br />
+              de la part de votre prédécesseur.
             </p>
             <div className="end-of-game-button-wrapper">
               <button
@@ -329,7 +330,7 @@ function App() {
     return Math.max(0, Math.min(100, score));
   };
 
-  const isGameOver = () => {   
+  const isGameOver = () => {
     //Anywhere in the game
     if (
       score.financement <= 0 ||
@@ -357,7 +358,9 @@ function App() {
       financement: normalizeScore(score.financement + choix.scoreFinancement),
       effetRebond: normalizeScore(score.effetRebond + choix.scoreEffetRebond),
       popularite: normalizeScore(score.popularite + choix.scorePopularite),
-      vulnerabilite: normalizeScore(score.vulnerabilite + choix.scoreVulnerabilite),
+      vulnerabilite: normalizeScore(
+        score.vulnerabilite + choix.scoreVulnerabilite
+      ),
     });
   };
 

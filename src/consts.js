@@ -66,7 +66,7 @@ export const questions = [
         "Certaines copropriétés sautent le pas, mais beaucoup sont réticentes et ne le font pas. Les nouvelles plantations nécessitent une sur-consommation d’eau.",
     },
     choixC: {
-      text: "Promouvoir les lieux existants ils suffisent",
+      text: "Promouvoir les lieux existants ils sont suffisants",
       scoreFinancement: 0,
       scoreEffetRebond: 0,
       scorePopularite: 0,
@@ -79,7 +79,7 @@ export const questions = [
     id: 3,
     categorie: "Espaces verts",
     question:
-      "Mais ces espaces verts, comme les habitants, sont aussi soumis à la chaleur, ce qui posent des problèmes d’alimentation et d'accès à l’eau. Comment comptez-vous vous adapter à ce besoin en eau ?",
+      "Mais ces espaces verts, comme les habitants, sont aussi soumis à la chaleur, ce qui pose des problèmes d’alimentation et d'accès à l’eau. Comment comptez-vous vous adapter à ce besoin en eau ?",
     choixA: {
       text: "Créer des parcs avec des essences résistantes à la sécheresse",
       scoreFinancement: -15,
@@ -274,7 +274,7 @@ export const questions = [
     id: 9,
     categorie: "Information",
     question:
-      "Comment s’assurer que la population est bien informée des risques de / de la chaleur ?",
+      "Comment s’assurer que la population est bien informée des risques de la chaleur ?",
     choixA: {
       text: "Mettre en place un dispositif d’alerte chaleur",
       scoreFinancement: -10,
@@ -293,7 +293,7 @@ export const questions = [
       scoreImpact: "Accessible à tous mais moins interactif",
     },
     choixC: {
-      text: "Organiser des campagnes d’information et de sensibilité à la culture de la chaleur / climatique, dans les quartiers",
+      text: "Organiser des campagnes d’information et de sensibilité à la culture climatique, dans les quartiers",
       scoreFinancement: -20,
       scoreEffetRebond: 0,
       scorePopularite: 10,
